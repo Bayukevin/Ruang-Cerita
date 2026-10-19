@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#ffffff;}body{overscroll-behavior:none;font-family:'Plus Jakarta Sans',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#4d41df", "secondary-fixed": "#78f7e3", "coral-soft": "#FFF0ED", "pink-soft": "#FFF0F6", "feedback-success": "#23856D", "error": "#ba1a1a", "border-subtle": "#E7EAF0", "on-secondary-fixed": "#00201c", "yellow-soft": "#FFF7DF", "surface-container-highest": "#d7e3fd", "background": "#f9f9ff", "yellow-accent": "#FFC857", "feedback-warning": "#A86708", "blue-accent": "#63A9F8", "text-secondary": "#667085", "pink-accent": "#F29BC2", "blue-soft": "#EAF4FF", "surface-tint": "#4f44e2", "on-tertiary-fixed-variant": "#86211e", "on-secondary": "#ffffff", "tertiary-fixed-dim": "#ffb3ac", "inverse-primary": "#c4c0ff", "secondary-container": "#75f4e1", "tertiary": "#a33631", "surface": "#ffffff", "error-container": "#ffdad6", "secondary-fixed-dim": "#58dbc7", "on-primary-container": "#fffbff", "on-error-container": "#93000a", "inverse-on-surface": "#ecf1ff", "tertiary-fixed": "#ffdad6", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "on-primary-fixed-variant": "#3622ca", "on-secondary-container": "#006f63", "inverse-surface": "#253145", "surface-container-low": "#f0f3ff", "on-background": "#0f1c2f", "primary-soft": "#EFEDFF", "outline-variant": "#c7c4d8", "surface-variant": "#d7e3fd", "on-tertiary-fixed": "#410003", "surface-dim": "#cedaf5", "primary-fixed": "#e3dfff", "coral-accent": "#FF7A70", "on-tertiary": "#ffffff", "tertiary-container": "#c44e47", "on-primary-fixed": "#100069", "on-primary": "#ffffff", "surface-container": "#e7eeff", "on-secondary-fixed-variant": "#005047", "surface-soft": "#FFF9F2", "surface-base": "#FFFFFF", "on-tertiary-container": "#fffbff", "teal-accent": "#27B7A5", "surface-container-high": "#dee8ff", "surface-bright": "#f9f9ff", "teal-soft": "#E4F8F4", "text-primary": "#243044", "on-surface": "#0f1c2f", "on-surface-variant": "#464555", "feedback-danger": "#C83F49", "secondary": "#006b5f", "primary-container": "#675df9", "outline": "#777587", "primary-fixed-dim": "#c4c0ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-xl": "2.5rem", "margin": "1.25rem", "margin-mobile": "1rem", "gutter": "1rem", "space-md": "1rem", "gutter-sm": "0.75rem", "space-xs": "0.25rem", "space-lg": "1.5rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "display": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"] }, fontSize: { "headline-lg": ["26px", { lineHeight: "34px", letterSpacing: "-0.015em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "26px", letterSpacing: "-0.005em", fontWeight: "600" }], "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "30px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "display": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "600" }], "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }], "label-sm": ["12px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500" }], "body-lg": ["17px", { lineHeight: "26px", fontWeight: "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface-base font-body-md text-body-md text-text-primary min-h-screen flex flex-col antialiased selection:bg-primary-soft"><header class="fixed top-0 w-full z-50 bg-surface-base/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Kembali" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-soft active:bg-primary-soft transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col ml-space-xs"><span class="font-label-sm text-label-sm text-text-secondary">Ruang Refleksi</span><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight font-semibold line-clamp-1">Pusat Bantuan Aman</h1></div></div><div class="flex items-center gap-space-xs"><button aria-label="Putar Suara" class="w-11 h-11 flex items-center justify-center rounded-full bg-primary-soft text-primary hover:bg-primary/20 active:scale-95 transition-all" type="button"><span class="material-symbols-outlined text-[20px]">volume_up</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface-base min-h-screen px-margin"><div class="flex flex-col w-full pb-8">
+<div class="mt-4 mb-4 rounded-xl bg-teal-soft p-4 flex items-start gap-3 shadow-sm">
+<div class="w-8 h-8 rounded-full bg-teal-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary font-medium leading-relaxed">
+      Kenyamanan dan keselamatanmu adalah yang terpenting bagi kami.
+    </p>
+</div>
+<div class="relative w-full h-36 rounded-xl overflow-hidden mb-5 shadow-sm">
+<div class="w-full h-full bg-cover bg-center" data-alt="Soft, comforting view of gentle green tea leaves resting in a ceramic cup with warm sunlight streaming through a window, serene and grounding ambiance, warm tones, high quality photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZMK6012U4TF--Y-iT9Xn2YcMWglBomA9Mc_6JvDlWdeSQCeQCNEh6RQax2WrPFYIik_w9W0IwWUnFZm-jFB8ICMU3p6cpnm4qOd-wJjJC5cTbnyVmsOh3oUgNVXdFt7Al76vJw8Vkp-JYip99xjNzMmksUyILOTS0th_x6M4RGGr6wGuJORbo3TiMtd9GyHDocNDgRpnXsAdhyTRPguiGKmtzZB210JnqaKlE2M9skCOaXJmw1fxbAw')">
+<div class="w-full h-full bg-gradient-to-t from-surface-base via-surface-base/30 to-transparent flex items-end p-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-base/90 text-text-secondary font-label-sm text-label-sm shadow-sm backdrop-blur-sm">
+<span class="material-symbols-outlined text-[16px] text-teal-accent">volunteer_activism</span>
+          Dukungan Ramah &amp; Terbuka
+        </span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 mb-6">
+<h2 class="font-headline-md text-headline-md text-text-primary tracking-tight">
+      Jika perasaan ini terasa terlalu berat untuk dihadapi sendiri...
+    </h2>
+<p class="font-body-md text-body-md text-text-secondary">
+      Ruang Cerita adalah pendamping AI untuk refleksi ringan. Jika kamu merasa terbebani atau butuh bantuan segera, ada orang-orang peduli yang siap mendengarkan 24 jam.
+    </p>
+</div>
+<div class="flex flex-col gap-3 mb-6">
+<div class="rounded-xl bg-coral-soft p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-coral-accent/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[22px]" style="font-variation-settings: 'FILL' 1;">emergency</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-text-primary">Layanan Krisis Darurat</span>
+<span class="bg-coral-accent/20 text-tertiary px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">24 Jam</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary">Hotline 119 ext. 8 (SEJIWA - Kemenkes RI)</span>
+<span class="font-label-sm text-label-sm text-feedback-success mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Bebas Pulsa Nasional
+            </span>
+</div>
+</div>
+</div>
+<a class="w-full h-12 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center gap-2 font-label-lg text-label-lg active:opacity-90 shadow-sm transition-all" href="tel:119">
+<span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
+        Hubungi 119
+      </a>
+</div>
+<div class="rounded-xl bg-surface-soft p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-yellow-accent/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-feedback-warning text-[22px]">support_agent</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-text-primary">Sahabat Jiwa &amp; LSM</span>
+<span class="font-label-sm text-label-sm text-text-secondary">Gratis</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 line-clamp-2">
+            Konseling sebaya ramah via percakapan pesan singkat atau sambungan suara langsung.
+          </p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-1">
+<a class="h-11 rounded-full bg-surface-base text-text-primary flex items-center justify-center gap-1.5 font-label-md text-label-md active:bg-primary-soft transition-colors shadow-sm" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-teal-accent">chat</span>
+          WhatsApp
+        </a>
+<a class="h-11 rounded-full bg-surface-base text-text-primary flex items-center justify-center gap-1.5 font-label-md text-label-md active:bg-primary-soft transition-colors shadow-sm" href="tel:021500454">
+<span class="material-symbols-outlined text-[18px] text-primary">call</span>
+          Telepon LSM
+        </a>
+</div>
+</div>
+<div class="rounded-xl bg-blue-soft p-4 shadow-sm flex items-center justify-between gap-3">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full bg-blue-accent/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[22px]">medical_services</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-text-primary truncate">Konseling Profesional</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Daftar psikolog berlisensi &amp; faskes terdekat</span>
+</div>
+</div>
+<button aria-label="Lihat daftar psikolog" class="shrink-0 w-10 h-10 rounded-full bg-surface-base text-primary flex items-center justify-center active:scale-95 transition-all shadow-sm" onclick="showPsychologistList()" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="rounded-xl bg-primary-soft/50 p-4 mb-6 flex items-center gap-3 shadow-sm">
+<div class="w-12 h-12 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Warm and reassuring illustration of hands holding a small glowing lantern together, minimalistic modern art in soft lavender and teal hues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAywAb-my40P-u_OhMXg5wW9SdRyk1tBQJ3-oWetYlLuLxQdds_ZqiMBP4TYlEyXlVfm8sHaZWG4yu_94MTX_IprjXDOeQDa5mgPbe4KZ4PKCuLcvKlWcOVfDJR0DcXmAC73JBEG83HG7Gz1N8bxZY0DvAogNVTkOleLe3Q537ql4zcmtrp4z8W7CqGEArXhYD8XbyI_9aDNa2J7ymWKQftZg0QG6DvNl-dAh2NIq_48gCQIZsfw0Gz8g"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-primary font-semibold">Mengambil Waktu Istirahat</span>
+<span class="font-body-sm text-body-sm text-text-secondary leading-snug">Kamu berhak bernapas sejenak tanpa harus memaksakan diri menyelesaikan semuanya hari ini.</span>
+</div>
+</div>
+<div class="flex flex-col gap-2.5 mb-5">
+<button class="w-full h-12 rounded-full bg-surface-soft text-text-primary flex items-center justify-center gap-2 font-label-lg text-label-lg active:bg-primary-soft transition-colors shadow-sm" id="saveContactBtn" onclick="saveEmergencyContact()" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">bookmark_add</span>
+      Simpan Kontak Darurat
+    </button>
+<button class="w-full h-12 rounded-full bg-surface-base text-text-secondary hover:text-text-primary flex items-center justify-center gap-2 font-label-md text-label-md active:bg-surface-soft transition-colors" onclick="resumeReflection()" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      Saya Aman, Lanjutkan Sesi Refleksi
+    </button>
+</div>
+<div class="pt-2 pb-4 text-center">
+<p class="font-label-sm text-label-sm text-text-secondary">
+      Ruang Cerita bukan pengganti diagnosis medis darurat.
+    </p>
+</div>
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-text-primary text-surface-base px-4 py-2.5 rounded-full font-label-sm text-label-sm shadow-xl opacity-0 pointer-events-none transition-opacity duration-300 z-50 flex items-center gap-2" id="toastMessage">
+<span class="material-symbols-outlined text-teal-accent text-[18px]">done</span>
+<span>Nomor penting berhasil disimpan ke catatan.</span>
+</div>
+</div>
+<script>
+  function saveEmergencyContact() {
+    const toast = document.getElementById('toastMessage');
+    if (!toast) return;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2800);
+  }
+
+  function resumeReflection() {
+    if (window.history && window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.reload();
+    }
+  }
+
+  function showPsychologistList() {
+    const toast = document.getElementById('toastMessage');
+    if (!toast) return;
+    toast.querySelector('span:last-child').textContent = 'Membuka direktori faskes terdekat...';
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+      toast.querySelector('span:last-child').textContent = 'Nomor penting berhasil disimpan ke catatan.';
+    }, 2000);
+  }
+</script></main></body></html>

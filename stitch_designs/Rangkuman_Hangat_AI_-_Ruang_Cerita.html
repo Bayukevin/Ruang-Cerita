@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#ffffff;}body{overscroll-behavior:none;font-family:'Plus Jakarta Sans',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#4d41df", "secondary-fixed": "#78f7e3", "coral-soft": "#FFF0ED", "pink-soft": "#FFF0F6", "feedback-success": "#23856D", "error": "#ba1a1a", "border-subtle": "#E7EAF0", "on-secondary-fixed": "#00201c", "yellow-soft": "#FFF7DF", "surface-container-highest": "#d7e3fd", "background": "#f9f9ff", "yellow-accent": "#FFC857", "feedback-warning": "#A86708", "blue-accent": "#63A9F8", "text-secondary": "#667085", "pink-accent": "#F29BC2", "blue-soft": "#EAF4FF", "surface-tint": "#4f44e2", "on-tertiary-fixed-variant": "#86211e", "on-secondary": "#ffffff", "tertiary-fixed-dim": "#ffb3ac", "inverse-primary": "#c4c0ff", "secondary-container": "#75f4e1", "tertiary": "#a33631", "surface": "#ffffff", "error-container": "#ffdad6", "secondary-fixed-dim": "#58dbc7", "on-primary-container": "#fffbff", "on-error-container": "#93000a", "inverse-on-surface": "#ecf1ff", "tertiary-fixed": "#ffdad6", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "on-primary-fixed-variant": "#3622ca", "on-secondary-container": "#006f63", "inverse-surface": "#253145", "surface-container-low": "#f0f3ff", "on-background": "#0f1c2f", "primary-soft": "#EFEDFF", "outline-variant": "#c7c4d8", "surface-variant": "#d7e3fd", "on-tertiary-fixed": "#410003", "surface-dim": "#cedaf5", "primary-fixed": "#e3dfff", "coral-accent": "#FF7A70", "on-tertiary": "#ffffff", "tertiary-container": "#c44e47", "on-primary-fixed": "#100069", "on-primary": "#ffffff", "surface-container": "#e7eeff", "on-secondary-fixed-variant": "#005047", "surface-soft": "#FFF9F2", "surface-base": "#FFFFFF", "on-tertiary-container": "#fffbff", "teal-accent": "#27B7A5", "surface-container-high": "#dee8ff", "surface-bright": "#f9f9ff", "teal-soft": "#E4F8F4", "text-primary": "#243044", "on-surface": "#0f1c2f", "on-surface-variant": "#464555", "feedback-danger": "#C83F49", "secondary": "#006b5f", "primary-container": "#675df9", "outline": "#777587", "primary-fixed-dim": "#c4c0ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-xl": "2.5rem", "margin": "1.25rem", "margin-mobile": "1rem", "gutter": "1rem", "space-md": "1rem", "gutter-sm": "0.75rem", "space-xs": "0.25rem", "space-lg": "1.5rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "display": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"] }, fontSize: { "headline-lg": ["26px", { lineHeight: "34px", letterSpacing: "-0.015em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "26px", letterSpacing: "-0.005em", fontWeight: "600" }], "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "30px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "display": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "600" }], "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }], "label-sm": ["12px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500" }], "body-lg": ["17px", { lineHeight: "26px", fontWeight: "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface-base font-body-md text-body-md text-text-primary min-h-screen flex flex-col antialiased selection:bg-primary-soft"><header class="fixed top-0 w-full z-50 bg-surface-base/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Kembali" class="w-11 h-11 flex items-center justify-center rounded-full text-text-primary hover:bg-surface-soft active:bg-primary-soft transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col ml-space-xs"><span class="font-label-sm text-label-sm text-text-secondary">Ruang Refleksi</span><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight font-semibold line-clamp-1">Rangkuman Hangat Ai</h1></div></div><div class="flex items-center gap-space-xs"><button aria-label="Putar Suara" class="w-11 h-11 flex items-center justify-center rounded-full bg-primary-soft text-primary hover:bg-primary/20 active:scale-95 transition-all" type="button"><span class="material-symbols-outlined text-[20px]">volume_up</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface-base min-h-screen px-margin"><div class="flex flex-col w-full pb-8">
+<div class="flex flex-col gap-space-sm pt-space-xs pb-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-teal-soft text-secondary w-fit shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-teal-accent" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide">Refleksi Berhasil Diproses</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Terima kasih sudah meluangkan waktu untuk dirimu.</h2>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+      Napasmu terasa lebih tenang sekarang. Mari resapi sejenak rangkuman dan pesan khusus untuk harimu.
+    </p>
+</div>
+<div class="w-full rounded-[24px] bg-gradient-to-br from-primary-soft/70 via-surface-soft to-teal-soft/40 p-space-md shadow-sm relative overflow-hidden mb-space-lg">
+<div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-primary/10 blur-2xl pointer-events-none"></div>
+<div class="absolute -left-6 -bottom-6 w-28 h-28 rounded-full bg-teal-accent/15 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between gap-space-sm mb-space-md relative z-10">
+<div class="inline-flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-base/90 shadow-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-primary text-[18px] animate-pulse" style="font-variation-settings: 'FILL' 1;">arrow_back_ios_new</span>
+<span class="font-label-sm text-label-sm font-semibold text-text-primary">Respons dari Pendamping AI</span>
+</div>
+<button class="flex items-center gap-1 text-primary hover:text-surface-tint active:scale-95 transition-all py-1 px-2 rounded-full hover:bg-surface-base/60" id="toggleTextBtn" onclick="toggleTextVisibility()" type="button">
+<span class="font-label-sm text-label-sm" id="toggleTextLabel">Sembunyikan teks</span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200" id="toggleTextIcon">expand_less</span>
+</button>
+</div>
+<div class="transition-all duration-300 overflow-hidden max-h-96 opacity-100 relative z-10" id="aiTextContainer">
+<p class="font-body-md text-body-md text-text-primary leading-relaxed bg-surface-base/80 p-space-md rounded-2xl shadow-sm backdrop-blur-sm">
+        "Wajar sekali merasa lelah dan cemas ketika pekerjaan menuntut banyak hal beberapa hari terakhir. Kamu sudah berusaha sebaik mungkin, dan mengakui rasa ini adalah langkah awal yang sangat berani."
+      </p>
+</div>
+<div class="mt-space-md pt-space-xs relative z-10">
+<div class="bg-surface-base rounded-2xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<button aria-label="Putar audio refleksi" class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-surface-tint active:scale-95 shadow-md shadow-primary/20 transition-all" id="playAudioBtn" onclick="toggleAudioPlayback()" type="button">
+<span class="material-symbols-outlined text-[26px]" id="playIcon">play_arrow</span>
+</button>
+<div class="flex flex-col ml-1">
+<span class="font-label-md text-label-md text-text-primary">Suara Ramah &amp; Teduh</span>
+<span class="font-label-sm text-label-sm text-text-secondary" id="audioTimer">01:14 / 01:45</span>
+</div>
+</div>
+<button aria-label="Ulangi dari awal" class="w-10 h-10 rounded-full bg-surface-soft hover:bg-primary-soft text-text-secondary hover:text-primary active:scale-95 flex items-center justify-center transition-all" onclick="replayAudio()" type="button">
+<span class="material-symbols-outlined text-[20px]">replay</span>
+</button>
+</div>
+<div class="w-full flex items-center gap-1 py-1 px-1">
+<div class="h-3 w-1 rounded-full bg-primary"></div>
+<div class="h-6 w-1 rounded-full bg-primary"></div>
+<div class="h-4 w-1 rounded-full bg-primary"></div>
+<div class="h-8 w-1 rounded-full bg-primary"></div>
+<div class="h-5 w-1 rounded-full bg-primary"></div>
+<div class="h-7 w-1 rounded-full bg-primary"></div>
+<div class="h-10 w-1 rounded-full bg-primary"></div>
+<div class="h-6 w-1 rounded-full bg-primary"></div>
+<div class="h-4 w-1 rounded-full bg-primary"></div>
+<div class="h-7 w-1 rounded-full bg-primary"></div>
+<div class="h-9 w-1 rounded-full bg-primary"></div>
+<div class="h-5 w-1 rounded-full bg-primary"></div>
+<div class="h-3 w-1 rounded-full bg-primary"></div>
+<div class="h-6 w-1 rounded-full bg-primary"></div>
+<div class="h-8 w-1 rounded-full bg-primary"></div>
+<div class="h-4 w-1 rounded-full bg-primary"></div>
+<div class="h-7 w-1 rounded-full bg-primary"></div>
+<div class="h-5 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-8 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-6 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-3 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-5 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-7 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-4 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-2 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-5 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-3 w-1 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Satu Hal Praktis yang Bisa Dicoba</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">Pilih salah satu</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="group w-full bg-surface-soft hover:bg-yellow-soft/50 p-space-md rounded-2xl flex items-center gap-space-md transition-all active:scale-[0.99] cursor-pointer shadow-sm" onclick="selectActionCard(this)" role="button" tabindex="0">
+<div class="w-14 h-14 rounded-2xl bg-yellow-soft flex items-center justify-center shrink-0 text-yellow-accent shadow-sm">
+<span class="material-symbols-outlined text-[28px] text-feedback-warning" style="font-variation-settings: 'FILL' 1;">devices_off</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-headline-sm text-headline-sm text-text-primary truncate font-semibold">Aturan 5 Menit Rehat Layar</span>
+<span class="material-symbols-outlined text-feedback-success text-[20px] opacity-0 transition-opacity check-icon">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mt-0.5">Jauhkan gadget sebentar, pejamkan mata, dan rasakan ketenangan tanpa stimulasi visual.</p>
+</div>
+</div>
+<div class="group w-full bg-blue-soft/50 hover:bg-blue-soft p-space-md rounded-2xl flex items-center gap-space-md transition-all active:scale-[0.99] cursor-pointer shadow-sm" onclick="selectActionCard(this)" role="button" tabindex="0">
+<div class="w-14 h-14 rounded-2xl bg-blue-soft flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px] text-blue-accent" style="font-variation-settings: 'FILL' 1;">self_improvement</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-headline-sm text-headline-sm text-text-primary truncate font-semibold">Minum Air &amp; Longgarkan Pundak</span>
+<span class="material-symbols-outlined text-feedback-success text-[20px] opacity-0 transition-opacity check-icon">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mt-0.5">Teguk perlahan air hangat, turunkan bahu yang tegang, lepaskan beban sejenak.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<button class="w-full h-[52px] rounded-full bg-primary text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-sm shadow-md shadow-primary/25 hover:bg-surface-tint active:scale-[0.98] transition-all" onclick="triggerBreathingSession()" type="button">
+<span class="material-symbols-outlined text-[22px]">air</span>
+<span>Coba Latihan Napas (1 mnt)</span>
+</button>
+<div class="grid grid-cols-2 gap-gutter-sm">
+<button class="w-full h-[52px] rounded-full bg-surface-base hover:bg-surface-soft active:bg-primary-soft text-text-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-xs shadow-sm active:scale-[0.98] transition-all" id="saveReflectionBtn" onclick="saveReflection(this)" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary" id="bookmarkIcon">bookmark_border</span>
+<span id="saveLabel">Simpan Refleksi</span>
+</button>
+<button class="w-full h-[52px] rounded-full bg-surface-base hover:bg-surface-soft active:bg-primary-soft text-text-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-xs shadow-sm active:scale-[0.98] transition-all" onclick="continueStory()" type="button">
+<span class="material-symbols-outlined text-[20px] text-text-secondary">chat_bubble_outline</span>
+<span>Lanjut Bercerita</span>
+</button>
+</div>
+</div>
+<div class="px-space-md py-space-sm rounded-xl bg-surface-soft/60 text-center mb-space-sm">
+<p class="font-label-sm text-label-sm text-text-secondary">
+      Ini adalah dukungan umum refleksi diri, bukan diagnosis psikologis medis.
+    </p>
+</div>
+</div>
+<script>
+  let isPlaying = false;
+  let isTextHidden = false;
+
+  function toggleAudioPlayback() {
+    isPlaying = !isPlaying;
+    const playIcon = document.getElementById('playIcon');
+    const timerText = document.getElementById('audioTimer');
+    
+    if (isPlaying) {
+      playIcon.innerText = 'pause';
+      timerText.innerText = '01:15 / 01:45 • Memutar';
+    } else {
+      playIcon.innerText = 'play_arrow';
+      timerText.innerText = '01:14 / 01:45';
+    }
+  }
+
+  function replayAudio() {
+    const playIcon = document.getElementById('playIcon');
+    const timerText = document.getElementById('audioTimer');
+    isPlaying = true;
+    playIcon.innerText = 'pause';
+    timerText.innerText = '00:00 / 01:45 • Memutar';
+  }
+
+  function toggleTextVisibility() {
+    isTextHidden = !isTextHidden;
+    const container = document.getElementById('aiTextContainer');
+    const label = document.getElementById('toggleTextLabel');
+    const icon = document.getElementById('toggleTextIcon');
+
+    if (isTextHidden) {
+      container.classList.remove('max-h-96', 'opacity-100');
+      container.classList.add('max-h-0', 'opacity-0');
+      label.innerText = 'Baca teks respons';
+      icon.classList.add('rotate-180');
+    } else {
+      container.classList.remove('max-h-0', 'opacity-0');
+      container.classList.add('max-h-96', 'opacity-100');
+      label.innerText = 'Sembunyikan teks';
+      icon.classList.remove('rotate-180');
+    }
+  }
+
+  function selectActionCard(cardElement) {
+    const allCards = cardElement.parentElement.children;
+    for (let c of allCards) {
+      const icon = c.querySelector('.check-icon');
+      if (icon) icon.classList.add('opacity-0');
+      c.classList.remove('bg-teal-soft', 'shadow-md');
+    }
+    const currentCheck = cardElement.querySelector('.check-icon');
+    if (currentCheck) currentCheck.classList.remove('opacity-0');
+    cardElement.classList.add('bg-teal-soft');
+  }
+
+  function triggerBreathingSession() {
+    const btn = event.currentTarget;
+    const originalText = btn.innerHTML;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[22px] animate-spin">progress_activity</span><span>Membuka Ruang Tenang...</span>`;
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+    }, 1500);
+  }
+
+  function saveReflection(button) {
+    const icon = document.getElementById('bookmarkIcon');
+    const label = document.getElementById('saveLabel');
+    if (label.innerText === 'Simpan Refleksi') {
+      label.innerText = 'Tersimpan';
+      icon.innerText = 'bookmark';
+      icon.style.fontVariationSettings = "'FILL' 1";
+      button.classList.add('bg-primary-soft');
+    } else {
+      label.innerText = 'Simpan Refleksi';
+      icon.innerText = 'bookmark_border';
+      icon.style.fontVariationSettings = "'FILL' 0";
+      button.classList.remove('bg-primary-soft');
+    }
+  }
+
+  function continueStory() {
+    const btn = event.currentTarget;
+    btn.classList.add('scale-95');
+    setTimeout(() => btn.classList.remove('scale-95'), 150);
+  }
+</script></main></body></html>

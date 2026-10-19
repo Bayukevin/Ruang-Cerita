@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#ffffff;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "coral-accent": "#FF7A70", "on-tertiary": "#ffffff", "inverse-surface": "#253145", "feedback-danger": "#C83F49", "outline": "#777587", "tertiary": "#a33631", "secondary": "#006b5f", "on-background": "#0f1c2f", "pink-accent": "#F29BC2", "on-primary-fixed-variant": "#3622ca", "text-secondary": "#667085", "surface-container-highest": "#d7e3fd", "error": "#ba1a1a", "on-secondary-container": "#006f63", "background": "#ffffff", "on-surface": "#0f1c2f", "text-primary": "#243044", "primary-fixed-dim": "#c4c0ff", "on-tertiary-container": "#fffbff", "tertiary-container": "#c44e47", "surface-base": "#FFFFFF", "teal-soft": "#E4F8F4", "surface-container": "#e7eeff", "tertiary-fixed-dim": "#ffb3ac", "teal-accent": "#27B7A5", "secondary-fixed": "#78f7e3", "surface-bright": "#ffffff", "on-surface-variant": "#464555", "secondary-container": "#75f4e1", "yellow-accent": "#FFC857", "blue-soft": "#EAF4FF", "on-secondary": "#ffffff", "surface-variant": "#d7e3fd", "surface": "#ffffff", "coral-soft": "#FFF0ED", "inverse-primary": "#c4c0ff", "pink-soft": "#FFF0F6", "surface-container-high": "#dee8ff", "on-secondary-fixed-variant": "#005047", "blue-accent": "#63A9F8", "outline-variant": "#c7c4d8", "primary-container": "#675df9", "primary": "#4d41df", "primary-soft": "#EFEDFF", "yellow-soft": "#FFF7DF", "on-error": "#ffffff", "on-error-container": "#93000a", "feedback-warning": "#A86708", "inverse-on-surface": "#ecf1ff", "on-primary-fixed": "#100069", "on-tertiary-fixed": "#410003", "on-primary-container": "#fffbff", "surface-container-lowest": "#ffffff", "feedback-success": "#23856D", "surface-dim": "#cedaf5", "error-container": "#ffdad6", "surface-container-low": "#f0f3ff", "on-tertiary-fixed-variant": "#86211e", "border-subtle": "#E7EAF0", "on-secondary-fixed": "#00201c", "tertiary-fixed": "#ffdad6", "on-primary": "#ffffff", "primary-fixed": "#e3dfff", "surface-soft": "#FFF9F2", "surface-tint": "#4f44e2", "secondary-fixed-dim": "#58dbc7" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "margin": "1.25rem", "margin-mobile": "1rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-sm": "0.75rem", "space-lg": "1.5rem" }, fontFamily: { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display": ["Plus Jakarta Sans"] }, fontSize: { "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "26px", letterSpacing: "-0.005em", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "30px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-lg": ["17px", { lineHeight: "26px", fontWeight: "400" }], "label-sm": ["12px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500" }], "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }], "label-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg": ["26px", { lineHeight: "34px", letterSpacing: "-0.015em", fontWeight: "700" }], "display": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-white font-body-md text-text-primary pt-safe pb-safe flex flex-col min-h-screen"><main class="flex-1 flex flex-col relative w-full bg-white"><div class="flex flex-col w-full bg-white px-margin pb-space-lg select-none">
+<!-- Top Navigation Bar & Progress Indicator -->
+<div class="flex items-center justify-between pt-space-md pb-space-sm w-full">
+<button aria-label="Kembali ke langkah sebelumnya" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-text-secondary active:bg-surface-soft transition-colors" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<!-- Step Indicators (Step 1, 2, 3 all completed/active) -->
+<div aria-label="Langkah 3 dari 3" aria-valuemax="3" aria-valuemin="1" aria-valuenow="3" class="flex items-center gap-1.5" role="progressbar">
+<div class="h-1.5 w-6 rounded-full bg-primary transition-all duration-300"></div>
+<div class="h-1.5 w-6 rounded-full bg-primary transition-all duration-300"></div>
+<div class="h-1.5 w-7 rounded-full bg-primary transition-all duration-300 shadow-sm"></div>
+</div>
+<button class="font-label-md text-label-md text-text-secondary px-2 py-1 rounded-full active:bg-surface-soft transition-colors" type="button">
+      Lewati
+    </button>
+</div>
+<!-- Hero Illustration: Supportive Summaries & Gentle Breath Loop -->
+<div class="relative w-full aspect-square max-h-[300px] flex items-center justify-center my-space-xs">
+<!-- Gentle Ambient Background Blobs -->
+<div class="absolute w-56 h-56 rounded-full bg-primary-soft/60 blur-2xl"></div>
+<div class="absolute -right-2 top-4 w-32 h-32 rounded-full bg-yellow-soft blur-xl"></div>
+<div class="absolute -left-2 bottom-4 w-36 h-36 rounded-full bg-teal-soft blur-xl"></div>
+<!-- Breathing / Grounding Radial Rings -->
+<div class="relative flex items-center justify-center">
+<!-- Outermost Pulse Ring -->
+<div class="w-64 h-64 rounded-full bg-teal-soft/70 flex items-center justify-center animate-pulse">
+<!-- Middle Gentle Ring -->
+<div class="w-52 h-52 rounded-full bg-primary-soft/80 flex items-center justify-center">
+<!-- Main Inner Breathing Orb -->
+<div class="w-40 h-40 rounded-full bg-surface-soft flex flex-col items-center justify-center relative shadow-sm">
+<!-- Floating Sparkle/Sun Delight Element (#FFC857) -->
+<div class="absolute -top-1 -right-1 w-9 h-9 rounded-full bg-yellow-accent flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface">wb_sunny</span>
+</div>
+<!-- Gentle Mind / Insight Heart Badge (#27B7A5) -->
+<div class="w-16 h-16 rounded-full bg-teal-accent flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<!-- Micro Breathing Rhythm Cue -->
+<span class="font-label-sm text-label-sm text-teal-accent font-semibold mt-2 tracking-wide uppercase">
+              Tarik • Hembus
+            </span>
+</div>
+</div>
+</div>
+<!-- Floating Supportive Micro-Cards -->
+<!-- Small Card Left: Refleksi Terarah -->
+<div class="absolute -left-3 bottom-6 bg-white/95 backdrop-blur-sm rounded-xl px-3 py-2 flex items-center gap-2 shadow-sm">
+<div class="w-6 h-6 rounded-full bg-teal-soft flex items-center justify-center text-teal-accent">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm font-semibold text-text-primary leading-tight">Empati</span>
+<span class="font-label-sm text-label-sm text-text-secondary text-[11px] leading-tight">Tanpa kritik</span>
+</div>
+</div>
+<!-- Small Card Right: Rangkuman Ringan -->
+<div class="absolute -right-3 top-8 bg-white/95 backdrop-blur-sm rounded-xl px-3 py-2 flex items-center gap-2 shadow-sm">
+<div class="w-6 h-6 rounded-full bg-yellow-soft flex items-center justify-center text-feedback-warning">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm font-semibold text-text-primary leading-tight">Langkah Kecil</span>
+<span class="font-label-sm text-label-sm text-text-secondary text-[11px] leading-tight">Mudah dicoba</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Content Section -->
+<div class="flex flex-col text-center px-space-xs mt- space-y-space-xs">
+<!-- Headline -->
+<h1 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight">
+      Saran praktis untuk hari yang lebih ringan.
+    </h1>
+<!-- Subtitle -->
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed px-1">
+      Dapatkan rangkuman refleksi penuh empati dan langkah kecil yang dapat kamu coba langsung kapan pun kamu butuhkan.
+    </p>
+</div>
+<!-- Safety & Emotional Disclaimer Card -->
+<div class="w-full bg-surface-soft rounded-2xl p-space-md mt-space-md flex items-start gap-space-sm text-left">
+<div class="w-8 h-8 rounded-full bg-white flex-shrink-0 flex items-center justify-center text-text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-text-primary mb-0.5">Ruang Aman Kamu</span>
+<p class="font-body-sm text-body-sm text-text-secondary leading-snug">
+        Ruang Cerita adalah pendamping AI untuk refleksi diri, bukan pengganti psikolog atau layanan darurat medis.
+      </p>
+</div>
+</div>
+<!-- Bottom CTA Actions -->
+<div class="w-full flex flex-col items-center pt-space-lg pb-space-xs gap-space-sm">
+<!-- Primary Button: Mulai Sekarang -->
+<button class="w-full h-[52px] rounded-full bg-primary active:bg-primary-container text-white font-label-lg text-label-lg font-semibold flex items-center justify-center shadow-sm transition-all transform active:scale-[0.99]" type="button">
+<span>Mulai Sekarang</span>
+<span class="material-symbols-outlined text-[20px] ml-1.5">arrow_forward</span>
+</button>
+<!-- Secondary Link: Masuk -->
+<button class="py-2 px-4 rounded-full active:bg-surface-soft transition-colors" type="button">
+<span class="font-body-sm text-body-sm text-text-secondary">Sudah punya akun? </span>
+<span class="font-label-md text-label-md text-primary font-semibold hover:underline">Masuk</span>
+</button>
+</div>
+</div></main></body></html>

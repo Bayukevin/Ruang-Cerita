@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#ffffff;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "coral-accent": "#FF7A70", "on-tertiary": "#ffffff", "inverse-surface": "#253145", "feedback-danger": "#C83F49", "outline": "#777587", "tertiary": "#a33631", "secondary": "#006b5f", "on-background": "#0f1c2f", "pink-accent": "#F29BC2", "on-primary-fixed-variant": "#3622ca", "text-secondary": "#667085", "surface-container-highest": "#d7e3fd", "error": "#ba1a1a", "on-secondary-container": "#006f63", "background": "#ffffff", "on-surface": "#0f1c2f", "text-primary": "#243044", "primary-fixed-dim": "#c4c0ff", "on-tertiary-container": "#fffbff", "tertiary-container": "#c44e47", "surface-base": "#FFFFFF", "teal-soft": "#E4F8F4", "surface-container": "#e7eeff", "tertiary-fixed-dim": "#ffb3ac", "teal-accent": "#27B7A5", "secondary-fixed": "#78f7e3", "surface-bright": "#ffffff", "on-surface-variant": "#464555", "secondary-container": "#75f4e1", "yellow-accent": "#FFC857", "blue-soft": "#EAF4FF", "on-secondary": "#ffffff", "surface-variant": "#d7e3fd", "surface": "#ffffff", "coral-soft": "#FFF0ED", "inverse-primary": "#c4c0ff", "pink-soft": "#FFF0F6", "surface-container-high": "#dee8ff", "on-secondary-fixed-variant": "#005047", "blue-accent": "#63A9F8", "outline-variant": "#c7c4d8", "primary-container": "#675df9", "primary": "#4d41df", "primary-soft": "#EFEDFF", "yellow-soft": "#FFF7DF", "on-error": "#ffffff", "on-error-container": "#93000a", "feedback-warning": "#A86708", "inverse-on-surface": "#ecf1ff", "on-primary-fixed": "#100069", "on-tertiary-fixed": "#410003", "on-primary-container": "#fffbff", "surface-container-lowest": "#ffffff", "feedback-success": "#23856D", "surface-dim": "#cedaf5", "error-container": "#ffdad6", "surface-container-low": "#f0f3ff", "on-tertiary-fixed-variant": "#86211e", "border-subtle": "#E7EAF0", "on-secondary-fixed": "#00201c", "tertiary-fixed": "#ffdad6", "on-primary": "#ffffff", "primary-fixed": "#e3dfff", "surface-soft": "#FFF9F2", "surface-tint": "#4f44e2", "secondary-fixed-dim": "#58dbc7" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "margin": "1.25rem", "margin-mobile": "1rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-sm": "0.75rem", "space-lg": "1.5rem" }, fontFamily: { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display": ["Plus Jakarta Sans"] }, fontSize: { "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "26px", letterSpacing: "-0.005em", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "30px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-lg": ["17px", { lineHeight: "26px", fontWeight: "400" }], "label-sm": ["12px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500" }], "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }], "label-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg": ["26px", { lineHeight: "34px", letterSpacing: "-0.015em", fontWeight: "700" }], "display": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-white font-body-md text-text-primary pt-safe pb-safe flex flex-col min-h-screen"><main class="flex-1 flex flex-col relative w-full bg-white"><div class="flex flex-col w-full">
+<!-- Top Bar: Progress and Skip -->
+<div class="flex items-center justify-between px-margin py-space-md">
+<!-- Step Progress Pills -->
+<div aria-label="Langkah 1 dari 3" class="flex items-center gap-1.5">
+<div class="h-1.5 w-7 rounded-full bg-primary-container transition-all"></div>
+<div class="h-1.5 w-2 rounded-full bg-surface-container-highest transition-all"></div>
+<div class="h-1.5 w-2 rounded-full bg-surface-container-highest transition-all"></div>
+</div>
+<!-- Skip Action -->
+<a class="font-label-md text-label-md text-text-secondary hover:text-text-primary transition-colors py-1 px-2 -mr-2" href="#">
+      Lewati
+    </a>
+</div>
+<!-- Main Scrollable / Stack Content -->
+<div class="flex flex-col px-margin pt-space-sm pb-space-lg space-y-space-lg">
+<!-- Visual Focus: Warm Brand Icon & Interactive Speech Bubble Composition -->
+<div class="relative w-full aspect-[4/3] rounded-3xl bg-surface-soft flex items-center justify-center overflow-hidden p-space-lg">
+<!-- Ambient gentle glow circles in background -->
+<div class="absolute -top-6 -right-6 w-36 h-36 rounded-full bg-yellow-soft opacity-70 blur-xl"></div>
+<div class="absolute -bottom-8 -left-6 w-40 h-40 rounded-full bg-teal-soft opacity-80 blur-xl"></div>
+<div class="absolute inset-center w-48 h-48 rounded-full bg-primary-soft opacity-60 blur-2xl"></div>
+<!-- Center Dynamic Illustration echoing the Ruang Cerita avatar -->
+<div class="relative flex flex-col items-center justify-center">
+<!-- Floating Companion Badge mimicking the prompt image -->
+<div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-primary-soft flex items-center justify-center shadow-sm">
+<!-- Ambient warm accent dot -->
+<div class="absolute top-2.5 right-4 w-4 h-4 rounded-full bg-yellow-accent shadow-sm animate-pulse"></div>
+<!-- SVG Overlapping Speech Bubbles with friendly eyes -->
+<svg class="w-16 h-16 sm:w-20 sm:h-20" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<!-- Purple Back Bubble -->
+<path d="M68 47C68 33.7452 56.8071 23 43 23C29.1929 23 18 33.7452 18 47C18 53.6493 20.8049 59.6644 25.3582 64.0322L20 79L34.8211 73.6841C37.3592 74.5262 40.1066 75 43 75C44.757 75 46.4678 74.8211 48.1122 74.4828C47.3879 72.1384 47 69.6433 47 67C47 55.9543 56.402 47 68 47Z" fill="#675df9"></path>
+<!-- Teal Front Bubble -->
+<path d="M82 56C82 45.5066 73.0457 37 62 37C50.9543 37 42 45.5066 42 56C42 66.4934 50.9543 75 62 75C64.3943 75 66.6738 74.5997 68.7758 73.8647L80 78L76.1287 67.8744C79.7997 64.6732 82 60.551 82 56Z" fill="#27B7A5"></path>
+<!-- Character expressive eyes -->
+<circle cx="56" cy="55" fill="#FFFFFF" r="3.5"></circle>
+<circle cx="67" cy="55" fill="#FFFFFF" r="3.5"></circle>
+</svg>
+</div>
+<!-- Floating Thought Pill Left -->
+<div class="absolute -left-3 -bottom-2 bg-surface-base px-3 py-1.5 rounded-full shadow-sm flex items-center space-x-1.5 animate-bounce" style="animation-duration: 3.5s;">
+<span class="w-2 h-2 rounded-full bg-teal-accent"></span>
+<span class="font-label-sm text-label-sm text-text-primary">Mendengarkan</span>
+</div>
+<!-- Floating Heart Pill Right -->
+<div class="absolute -right-4 -top-1 bg-surface-base px-3 py-1.5 rounded-full shadow-sm flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-coral-accent text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-sm text-label-sm text-text-primary">Aman</span>
+</div>
+</div>
+</div>
+<!-- Heading & Reassuring Subtitle -->
+<div class="flex flex-col space-y-space-xs text-left">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">
+        Ada ruang untuk setiap ceritamu.
+      </h1>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+        Ungkapkan apa yang sedang kamu rasakan dalam ruang yang tenang, aman, dan tanpa rasa dihakimi.
+      </p>
+</div>
+<!-- Interactive Preview Card / Delight Component -->
+<div class="relative rounded-2xl bg-surface-soft p-space-md transition-all cursor-pointer select-none active:scale-[0.99]" id="interactivePreview">
+<div class="flex items-start justify-between mb-space-xs">
+<div class="flex items-center space-x-2">
+<div class="w-6 h-6 rounded-full bg-primary-soft flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-base">psychology</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">Contoh Suasana Cerita</span>
+</div>
+<span class="font-label-sm text-label-sm bg-teal-soft text-secondary font-semibold px-2 py-0.5 rounded-full flex items-center space-x-1">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-accent"></span>
+<span>Respon Hangat</span>
+</span>
+</div>
+<!-- User prompt sample -->
+<div class="bg-surface-base rounded-xl p-3 mb-2.5">
+<p class="font-body-sm text-body-sm text-text-primary font-medium italic">
+          “Aku merasa sedikit lelah hari ini...”
+        </p>
+</div>
+<!-- AI gentle response sample -->
+<div class="flex items-start space-x-2.5 pl-1">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5" style="font-variation-settings: 'FILL' 1;">arrow_back_ios_new</span>
+<p class="font-body-sm text-body-sm text-text-secondary flex-1">
+          Tidak apa-apa untuk jeda sebentar. Tarik napas perlahan, kamu sudah berjuang dengan sangat baik hari ini.
+        </p>
+</div>
+</div>
+</div>
+<!-- Bottom Ergonomic Actions Zone -->
+<div class="mt-auto px-margin pt-space-sm pb-space-lg flex flex-col space-y-space-sm bg-surface-base">
+<button class="w-full h-[52px] rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg active:bg-primary transition-colors flex items-center justify-center space-x-2 shadow-sm" onclick="handleNextStep()" type="button">
+<span>Lanjut</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+<!-- Privacy Trust Microcopy -->
+<div class="flex items-center justify-center space-x-1.5 py-1 text-text-secondary">
+<span class="material-symbols-outlined text-sm text-teal-accent" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-sm text-label-sm">Privasi terjaga sepenuhnya.</span>
+</div>
+</div>
+</div>
+<script>
+  function handleNextStep() {
+    const preview = document.getElementById('interactivePreview');
+    if (preview) {
+      preview.classList.add('bg-primary-soft');
+      setTimeout(() => {
+        preview.classList.remove('bg-primary-soft');
+      }, 400);
+    }
+  }
+</script></main></body></html>
