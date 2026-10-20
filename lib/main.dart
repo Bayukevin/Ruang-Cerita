@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'firebase_options.dart';
 import 'theme/app_colors.dart';
 import 'screens/splash_screen.dart';
 import 'screens/onboarding_1_screen.dart';
@@ -15,7 +18,7 @@ import 'screens/pertanyaan_adaptif_screen.dart';
 import 'screens/rangkuman_hangat_ai_screen.dart';
 import 'screens/sesi_selesai_screen.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
@@ -23,11 +26,20 @@ void main() {
       statusBarIconBrightness: Brightness.dark,
     ),
   );
-  runApp(const RuangCeritaApp());
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  } catch (e) {
+    debugPrint('Firebase init error: $e');
+  }
+  final isLoggedIn = FirebaseAuth.instance.currentUser != null;
+  runApp(RuangCeritaApp(isLoggedIn: isLoggedIn));
 }
 
 class RuangCeritaApp extends StatelessWidget {
-  const RuangCeritaApp({super.key});
+  final bool isLoggedIn;
+  const RuangCeritaApp({super.key, this.isLoggedIn = false});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +73,7 @@ class RuangCeritaApp extends StatelessWidget {
           iconTheme: const IconThemeData(color: AppColors.textPrimary),
         ),
       ),
-      initialRoute: '/onboarding_1',
+      initialRoute: isLoggedIn ? '/beranda' : '/onboarding_1',
       routes: {
         '/': (context) => const Onboarding1Screen(),
         '/onboarding_1': (context) => const Onboarding1Screen(),

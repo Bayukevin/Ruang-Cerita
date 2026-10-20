@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import '../services/auth_service.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_typography.dart';
 import 'login_screen.dart';
@@ -28,20 +29,61 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
-  void _handleRegister() {
+  Future<void> _handleRegister() async {
     if (!_consentChecked) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Silakan centang persetujuan terlebih dahulu'),
+        SnackBar(
+          content: Text(
+            'Silakan centang persetujuan terlebih dahulu',
+            style: AppTypography.labelSm.copyWith(color: Colors.white),
+          ),
+          backgroundColor: AppColors.feedbackDanger,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
+
+    final email = _emailController.text.trim();
+    final password = _passwordController.text;
+    final name = _nameController.text.trim();
+
+    if (email.isEmpty || password.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Email dan kata sandi wajib diisi',
+            style: AppTypography.labelSm.copyWith(color: Colors.white),
+          ),
+          backgroundColor: AppColors.feedbackDanger,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
+
+    if (password.length < 6) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Kata sandi minimal 6 karakter',
+            style: AppTypography.labelSm.copyWith(color: Colors.white),
+          ),
+          backgroundColor: AppColors.feedbackDanger,
+          behavior: SnackBarBehavior.floating,
         ),
       );
       return;
     }
 
     setState(() => _isLoading = true);
-    Timer(const Duration(milliseconds: 1000), () {
+    try {
+      await AuthService.instance.registerWithEmail(
+        email: email,
+        password: password,
+        name: name.isNotEmpty ? name : null,
+      );
       if (!mounted) return;
-      setState(() => _isLoading = false);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
@@ -53,10 +95,64 @@ class _RegisterScreenState extends State<RegisterScreen> {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(999)),
         ),
       );
-      Navigator.of(context).pushReplacement(
+      Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (_) => const BerandaScreen()),
+        (route) => false,
       );
-    });
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            AuthService.getErrorMessage(e),
+            style: AppTypography.labelSm.copyWith(color: Colors.white),
+          ),
+          backgroundColor: AppColors.feedbackDanger,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
+
+  Future<void> _handleGoogleRegister() async {
+    setState(() => _isLoading = true);
+    try {
+      final cred = await AuthService.instance.signInWithGoogle();
+      if (!mounted) return;
+      if (cred != null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              'Berhasil mendaftar dengan Google!',
+              style: AppTypography.labelSm.copyWith(color: Colors.white),
+            ),
+            backgroundColor: AppColors.textPrimary,
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(999)),
+          ),
+        );
+        Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (_) => const BerandaScreen()),
+          (route) => false,
+        );
+      }
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            AuthService.getErrorMessage(e),
+            style: AppTypography.labelSm.copyWith(color: Colors.white),
+          ),
+          backgroundColor: AppColors.feedbackDanger,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
   }
 
   @override
@@ -159,7 +255,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: double.infinity,
                 height: 52,
                 child: OutlinedButton(
-                  onPressed: _handleRegister,
+                  onPressed: _isLoading ? null : _handleGoogleRegister,
                   style: OutlinedButton.styleFrom(
                     backgroundColor: Colors.white,
                     side: const BorderSide(color: AppColors.borderSubtle),

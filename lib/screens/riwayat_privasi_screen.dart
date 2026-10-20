@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../services/auth_service.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_typography.dart';
 import 'pusat_bantuan_aman_screen.dart';
@@ -864,11 +865,114 @@ class _RiwayatPrivasiScreenState extends State<RiwayatPrivasiScreen> {
                     ],
                   ),
                 ),
+
+                const SizedBox(height: 14),
+
+                // Akun & Sesi Card
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(18),
+                    border: Border.all(color: AppColors.borderSubtle),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.account_circle_outlined,
+                            size: 20,
+                            color: AppColors.primary,
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            'Akun & Sesi',
+                            style: AppTypography.labelMd.copyWith(
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        AuthService.instance.currentUser?.email != null
+                            ? 'Masuk sebagai: ${AuthService.instance.currentUser!.email}'
+                            : 'Status: Masuk sebagai Tamu',
+                        style: AppTypography.bodySm.copyWith(
+                          color: AppColors.textSecondary,
+                          fontSize: 12,
+                        ),
+                      ),
+                      const SizedBox(height: 14),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 44,
+                        child: OutlinedButton.icon(
+                          onPressed: _showSignOutDialog,
+                          icon: const Icon(Icons.logout_rounded, size: 18),
+                          label: Text(
+                            'Keluar dari Akun',
+                            style: AppTypography.labelSm.copyWith(
+                              color: AppColors.feedbackDanger,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: AppColors.feedbackDanger,
+                            side: const BorderSide(color: AppColors.coralSoft),
+                            backgroundColor: AppColors.surfaceSoft,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(999),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
               const SizedBox(height: 20),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  void _showSignOutDialog() {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: const Text('Keluar dari Akun?'),
+        content: const Text(
+          'Sesi Anda akan diakhiri. Anda perlu masuk kembali saat membuka aplikasi.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(),
+            child: const Text('Batal'),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              Navigator.of(ctx).pop();
+              await AuthService.instance.signOut();
+              if (mounted) {
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/login',
+                  (route) => false,
+                );
+              }
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.feedbackDanger,
+              foregroundColor: Colors.white,
+            ),
+            child: const Text('Keluar'),
+          ),
+        ],
       ),
     );
   }

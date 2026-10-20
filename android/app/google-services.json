@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "993808199190",
+    "project_id": "ruang-cerita-c1e8a",
+    "storage_bucket": "ruang-cerita-c1e8a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993808199190:android:8baf4821de213c15650f37",
+        "android_client_info": {
+          "package_name": "ruang_cerita.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "993808199190-ilv78glbqia1ja4tmhf6ij00rr3f441g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuQhKBbeuRILn6Pm3yodEwGSiXx6Khs40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "993808199190-ilv78glbqia1ja4tmhf6ij00rr3f441g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
