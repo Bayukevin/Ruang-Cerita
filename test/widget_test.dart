@@ -1,30 +1,50 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:ruang_cerita/main.dart';
+import 'package:ruang_cerita/screens/pilih_perasaan_screen.dart';
+import 'package:ruang_cerita/screens/latihan_pernapasan_screen.dart';
+import 'package:ruang_cerita/screens/beranda_screen.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('PilihPerasaanScreen renders emotion selection cards', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: PilihPerasaanScreen(),
+      ),
+    );
+    expect(find.text('Apa yang paling kamu rasakan saat ini?'), findsOneWidget);
+    expect(find.text('Cemas'), findsOneWidget);
+    expect(find.text('Lelah'), findsOneWidget);
+    expect(find.text('Lanjut'), findsOneWidget);
+  });
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  testWidgets('LatihanPernapasanScreen renders breathing exercise guide', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: LatihanPernapasanScreen(),
+      ),
+    );
+    expect(find.text('Tarik Napas, Lepaskan Beban'), findsOneWidget);
+    expect(find.text('1 Menit'), findsOneWidget);
+    expect(find.text('3 Menit'), findsOneWidget);
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+  testWidgets('BerandaScreen keeps persistent BottomNavigationBar across tabs', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: BerandaScreen(initialIndex: 2),
+      ),
+    );
+
+    expect(find.byType(BottomNavigationBar), findsOneWidget);
+    expect(find.text('Riwayat Refleksi'), findsOneWidget);
+
+    // Tap Bantuan tab in BottomNavigationBar
+    await tester.tap(find.text('Bantuan'));
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify navigation bar is still present and Bantuan content is visible
+    expect(find.byType(BottomNavigationBar), findsOneWidget);
+    expect(find.text('Layanan Konseling Profesional'), findsNothing);
+    expect(find.text('Pusat Bantuan Aman'), findsWidgets);
   });
 }

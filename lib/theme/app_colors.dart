@@ -5,15 +5,20 @@ abstract final class AppColors {
   static const Color primary = Color(0xFF4D41DF);
   static const Color primaryContainer = Color(0xFF675DF9);
   static const Color primarySoft = Color(0xFFEFEDFF);
+  static const Color secondary = Color(0xFF006B5F);
+  static const Color onPrimary = Color(0xFFFFFFFF);
 
   // Surface & Background
   static const Color background = Color(0xFFF9F9FF);
   static const Color surfaceBase = Color(0xFFFFFFFF);
   static const Color surfaceSoft = Color(0xFFFFF9F2);
   static const Color surfaceContainerLow = Color(0xFFF0F3FF);
+  static const Color surfaceContainer = Color(0xFFE7EEFF);
   static const Color surfaceContainerHighest = Color(0xFFD7E3FD);
   static const Color inverseSurface = Color(0xFF253145);
   static const Color borderSubtle = Color(0xFFE7EAF0);
+  static const Color outlineVariant = Color(0xFFC7C4D8);
+  static const Color tertiary = Color(0xFFA33631);
 
   // Text
   static const Color textPrimary = Color(0xFF243044);
