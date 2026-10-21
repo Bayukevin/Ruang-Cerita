@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import '../services/tts_service.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_typography.dart';
 import 'rangkuman_hangat_ai_screen.dart';
@@ -10,7 +12,7 @@ class PertanyaanAdaptifScreen extends StatefulWidget {
 
   const PertanyaanAdaptifScreen({
     super.key,
-    this.selectedFeeling = 'Cemas',
+    this.selectedFeeling = 'cemas',
     this.selectedSituation = 'pekerjaan',
   });
 
@@ -21,7 +23,33 @@ class PertanyaanAdaptifScreen extends StatefulWidget {
 
 class _PertanyaanAdaptifScreenState extends State<PertanyaanAdaptifScreen> {
   String _selectedDuration = 'beberapa-hari';
-  bool _isPlayingAudio = true;
+  bool _isPlayingAudio = false;
+  StreamSubscription<bool>? _ttsSub;
+
+  @override
+  void initState() {
+    super.initState();
+    debugPrint('DEBUG: PertanyaanAdaptifScreen initState');
+    _ttsSub = TtsService.instance.speakingStream.listen((speaking) {
+      if (mounted) setState(() => _isPlayingAudio = speaking);
+    });
+  }
+
+  @override
+  void dispose() {
+    _ttsSub?.cancel();
+    TtsService.instance.stop();
+    super.dispose();
+  }
+
+  void _toggleAudio() {
+    if (_isPlayingAudio) {
+      TtsService.instance.stop();
+    } else {
+      TtsService.instance.speak(
+          'Sudah berapa lama perasaan ini muncul? Pilihanmu membantu kami memahami situasimu.');
+    }
+  }
 
   final List<Map<String, dynamic>> _durationOptions = [
     {
@@ -83,11 +111,7 @@ class _PertanyaanAdaptifScreenState extends State<PertanyaanAdaptifScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () {
-              setState(() {
-                _isPlayingAudio = !_isPlayingAudio;
-              });
-            },
+            onPressed: _toggleAudio,
             icon: Container(
               width: 36,
               height: 36,
@@ -285,11 +309,7 @@ class _PertanyaanAdaptifScreenState extends State<PertanyaanAdaptifScreen> {
                                 ),
                               ),
                               GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    _isPlayingAudio = !_isPlayingAudio;
-                                  });
-                                },
+                                onTap: _toggleAudio,
                                 child: Container(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 12, vertical: 6),
@@ -567,6 +587,7 @@ class _PertanyaanAdaptifScreenState extends State<PertanyaanAdaptifScreen> {
                     height: 52,
                     child: ElevatedButton(
                       onPressed: () {
+                        debugPrint('DEBUG: PertanyaanAdaptifScreen Lanjut pressed');
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (_) => RangkumanHangatAiScreen(

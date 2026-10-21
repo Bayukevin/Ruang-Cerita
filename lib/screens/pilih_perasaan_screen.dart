@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import '../services/tts_service.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_typography.dart';
 import 'pilih_situasi_screen.dart';
@@ -14,6 +16,31 @@ class PilihPerasaanScreen extends StatefulWidget {
 class _PilihPerasaanScreenState extends State<PilihPerasaanScreen> {
   String _selectedFeeling = 'cemas';
   bool _isSpeaking = false;
+  StreamSubscription<bool>? _ttsSub;
+
+  @override
+  void initState() {
+    super.initState();
+    _ttsSub = TtsService.instance.speakingStream.listen((speaking) {
+      if (mounted) setState(() => _isSpeaking = speaking);
+    });
+  }
+
+  @override
+  void dispose() {
+    _ttsSub?.cancel();
+    TtsService.instance.stop();
+    super.dispose();
+  }
+
+  void _toggleSpeech() {
+    if (_isSpeaking) {
+      TtsService.instance.stop();
+    } else {
+      TtsService.instance.speak(
+          'Apa yang paling kamu rasakan saat ini? Pilih salah satu yang paling mendekati.');
+    }
+  }
 
   final List<Map<String, dynamic>> _feelings = [
     {
@@ -81,26 +108,6 @@ class _PilihPerasaanScreenState extends State<PilihPerasaanScreen> {
       'accentColor': AppColors.textSecondary,
     },
   ];
-
-  void _toggleSpeech() {
-    setState(() {
-      _isSpeaking = !_isSpeaking;
-    });
-    if (_isSpeaking) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            'Membacakan: "Apa yang paling kamu rasakan saat ini?"',
-            style: AppTypography.labelSm.copyWith(color: Colors.white),
-          ),
-          duration: const Duration(seconds: 2),
-          behavior: SnackBarBehavior.floating,
-          backgroundColor: AppColors.primary,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(999)),
-        ),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -483,14 +490,11 @@ class _PilihPerasaanScreenState extends State<PilihPerasaanScreen> {
                 height: 52,
                 child: ElevatedButton(
                   onPressed: () {
-                    final currentItem = _feelings.firstWhere(
-                      (e) => e['id'] == _selectedFeeling,
-                      orElse: () => _feelings.first,
-                    );
+                    debugPrint('DEBUG: PilihPerasaanScreen Lanjut pressed with $_selectedFeeling');
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (_) => PilihSituasiScreen(
-                          selectedFeeling: currentItem['title'] as String,
+                          selectedFeeling: _selectedFeeling,
                         ),
                       ),
                     );

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -5,14 +6,44 @@ class AuthService {
   AuthService._();
   static final AuthService instance = AuthService._();
 
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  FirebaseAuth? _mockAuth;
+  FirebaseAuth get _auth => _mockAuth ?? FirebaseAuth.instance;
+
+  @visibleForTesting
+  void setMockAuth(FirebaseAuth mock) {
+    _mockAuth = mock;
+  }
+
   final GoogleSignIn _googleSignIn = GoogleSignIn(
     serverClientId:
         '993808199190-ilv78glbqia1ja4tmhf6ij00rr3f441g.apps.googleusercontent.com',
   );
 
-  User? get currentUser => _auth.currentUser;
-  Stream<User?> get authStateChanges => _auth.authStateChanges();
+  User? get currentUser {
+    try {
+      return _auth.currentUser;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Stream<User?> get authStateChanges {
+    try {
+      return _auth.authStateChanges();
+    } catch (_) {
+      return const Stream.empty();
+    }
+  }
+
+  Future<String?> getIdToken({bool forceRefresh = false}) async {
+    try {
+      final user = currentUser;
+      if (user == null) return null;
+      return await user.getIdToken(forceRefresh);
+    } catch (_) {
+      return null;
+    }
+  }
 
   Future<UserCredential> signInWithEmail({
     required String email,

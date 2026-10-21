@@ -40,7 +40,11 @@ class _LatihanPernapasanScreenState extends State<LatihanPernapasanScreen>
       vsync: this,
       duration: const Duration(seconds: 4),
     );
-    _startBreathingCycle();
+    if (!widget.isTab) {
+      _startBreathingCycle();
+    } else {
+      _isPaused = true;
+    }
   }
 
   void _startBreathingCycle() {
@@ -95,6 +99,9 @@ class _LatihanPernapasanScreenState extends State<LatihanPernapasanScreen>
       if (_isPaused) {
         _animController.stop();
       } else {
+        if (_countdownTimer == null || !_countdownTimer!.isActive) {
+          _startBreathingCycle();
+        }
         if (_breathPhase == 0) {
           _animController.forward();
         } else if (_breathPhase == 2) {

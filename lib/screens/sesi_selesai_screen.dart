@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import '../models/reflection_record.dart';
+import '../services/storage_service.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_typography.dart';
 import 'beranda_screen.dart';
 import 'pusat_bantuan_aman_screen.dart';
 
 class SesiSelesaiScreen extends StatefulWidget {
-  const SesiSelesaiScreen({super.key});
+  final ReflectionRecord? record;
+
+  const SesiSelesaiScreen({super.key, this.record});
 
   @override
   State<SesiSelesaiScreen> createState() => _SesiSelesaiScreenState();
@@ -13,6 +17,7 @@ class SesiSelesaiScreen extends StatefulWidget {
 
 class _SesiSelesaiScreenState extends State<SesiSelesaiScreen> {
   String _selectedEvaluation = 'lega';
+  ReflectionRecord? _currentRecord;
 
   final List<Map<String, dynamic>> _evaluations = [
     {
@@ -50,6 +55,62 @@ class _SesiSelesaiScreenState extends State<SesiSelesaiScreen> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    _currentRecord = widget.record;
+    if (_currentRecord?.evaluation != null &&
+        _currentRecord!.evaluation!.isNotEmpty) {
+      _selectedEvaluation = _currentRecord!.evaluation!;
+    }
+  }
+
+  Future<void> _updateEvaluation(String evalId) async {
+    setState(() => _selectedEvaluation = evalId);
+    if (_currentRecord != null) {
+      _currentRecord = _currentRecord!.copyWith(evaluation: evalId);
+      await StorageService.instance.saveReflection(_currentRecord!);
+    }
+  }
+
+  Future<void> _onFinishAndGoHome() async {
+    if (_currentRecord != null) {
+      _currentRecord = _currentRecord!.copyWith(evaluation: _selectedEvaluation);
+      await StorageService.instance.saveReflection(_currentRecord!);
+    }
+    if (mounted) {
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (_) => const BerandaScreen()),
+        (route) => false,
+      );
+    }
+  }
+
+  Future<void> _onSaveToHistory() async {
+    if (_currentRecord != null) {
+      _currentRecord = _currentRecord!.copyWith(
+        isSaved: true,
+        evaluation: _selectedEvaluation,
+      );
+      await StorageService.instance.saveReflection(_currentRecord!);
+    }
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Refleksi tersimpan ke riwayat privat.'),
+          duration: Duration(seconds: 2),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(
+          builder: (_) => const BerandaScreen(initialIndex: 2),
+        ),
+        (route) => false,
+      );
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -60,12 +121,7 @@ class _SesiSelesaiScreenState extends State<SesiSelesaiScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_rounded),
           color: AppColors.textPrimary,
-          onPressed: () {
-            Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (_) => const BerandaScreen()),
-              (route) => false,
-            );
-          },
+          onPressed: _onFinishAndGoHome,
         ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,7 +145,8 @@ class _SesiSelesaiScreenState extends State<SesiSelesaiScreen> {
           IconButton(
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const PusatBantuanAmanScreen()),
+                MaterialPageRoute(
+                    builder: (_) => const PusatBantuanAmanScreen()),
               );
             },
             icon: Container(
@@ -178,7 +235,7 @@ class _SesiSelesaiScreenState extends State<SesiSelesaiScreen> {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      'Kamu telah meluangkan waktu 4 menit untuk mengenali emosimu secara jujur dan penuh kelembutan.',
+                      'Kamu telah meluangkan waktu sejenak untuk mengenali emosimu secara jujur dan penuh kelembutan.',
                       textAlign: TextAlign.center,
                       style: AppTypography.bodySm.copyWith(
                         color: AppColors.textSecondary,
@@ -284,11 +341,7 @@ class _SesiSelesaiScreenState extends State<SesiSelesaiScreen> {
                   final accentColor = item['accentColor'] as Color;
 
                   return GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _selectedEvaluation = item['id'] as String;
-                      });
-                    },
+                    onTap: () => _updateEvaluation(item['id'] as String),
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 180),
                       padding: const EdgeInsets.all(12),
@@ -370,12 +423,7 @@ class _SesiSelesaiScreenState extends State<SesiSelesaiScreen> {
                 width: double.infinity,
                 height: 52,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(builder: (_) => const BerandaScreen()),
-                      (route) => false,
-                    );
-                  },
+                  onPressed: _onFinishAndGoHome,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primary,
                     foregroundColor: Colors.white,
@@ -408,13 +456,7 @@ class _SesiSelesaiScreenState extends State<SesiSelesaiScreen> {
                 width: double.infinity,
                 height: 50,
                 child: OutlinedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(
-                          builder: (_) => const BerandaScreen(initialIndex: 2)),
-                      (route) => false,
-                    );
-                  },
+                  onPressed: _onSaveToHistory,
                   style: OutlinedButton.styleFrom(
                     side: const BorderSide(color: AppColors.borderSubtle),
                     shape: RoundedRectangleBorder(

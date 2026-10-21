@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import '../services/tts_service.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_typography.dart';
 import 'pertanyaan_adaptif_screen.dart';
@@ -9,7 +11,7 @@ class PilihSituasiScreen extends StatefulWidget {
 
   const PilihSituasiScreen({
     super.key,
-    this.selectedFeeling = 'Cemas',
+    this.selectedFeeling = 'cemas',
   });
 
   @override
@@ -19,24 +21,30 @@ class PilihSituasiScreen extends StatefulWidget {
 class _PilihSituasiScreenState extends State<PilihSituasiScreen> {
   String _selectedSituation = 'pekerjaan';
   bool _isSpeaking = false;
+  StreamSubscription<bool>? _ttsSub;
+
+  @override
+  void initState() {
+    super.initState();
+    debugPrint('DEBUG: PilihSituasiScreen initState with feeling ${widget.selectedFeeling}');
+    _ttsSub = TtsService.instance.speakingStream.listen((speaking) {
+      if (mounted) setState(() => _isSpeaking = speaking);
+    });
+  }
+
+  @override
+  void dispose() {
+    _ttsSub?.cancel();
+    TtsService.instance.stop();
+    super.dispose();
+  }
 
   void _toggleSpeech() {
-    setState(() {
-      _isSpeaking = !_isSpeaking;
-    });
     if (_isSpeaking) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            'Membacakan: "Hal ini paling berkaitan dengan apa?"',
-            style: AppTypography.labelSm.copyWith(color: Colors.white),
-          ),
-          duration: const Duration(seconds: 2),
-          behavior: SnackBarBehavior.floating,
-          backgroundColor: AppColors.primary,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(999)),
-        ),
-      );
+      TtsService.instance.stop();
+    } else {
+      TtsService.instance.speak(
+          'Hal ini paling berkaitan dengan apa? Pilih situasi yang sedang kamu hadapi.');
     }
   }
 
